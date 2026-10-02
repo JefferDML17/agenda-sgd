@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendamiento - Acompañamiento SGD</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Acompañamiento a la gestión documental del área</h1>
+      <p>Selecciona un bloque disponible en la agenda semanal para registrar tu cita</p>
+    </header>
+
+    <div class="main-content">
+      <!-- Tabla / Parrilla de la Semana -->
+      <div class="card">
+        <h2>Agenda Semanal (5 de Octubre - 9 de Octubre 2026)</h2>
+        <div class="grid-container" id="weeklyGrid">
+          <!-- Se genera dinámicamente con JS -->
+        </div>
+      </div>
+
+      <!-- Formulario de Registro -->
+      <div class="card">
+        <h2>Registrar Acompañamiento</h2>
+        <form id="bookingForm">
+          <div class="selected-slot-info" id="slotInfo">
+            👈 Haz clic en un bloque <strong>VERDE</strong> de la agenda para comenzar.
+          </div>
+
+          <div class="form-group">
+            <label for="leaderName">Nombre Completo *</label>
+            <input type="text" id="leaderName" required placeholder="Ej. Juan Pérez">
+          </div>
+
+          <div class="form-group">
+            <label for="areaSelect">Área *</label>
+            <select id="areaSelect" required>
+              <option value="">-- Seleccionar Área --</option>
+              <option value="GERENCIA">GERENCIA</option>
+              <option value="REVISORÍA FISCAL">REVISORÍA FISCAL</option>
+              <option value="CUMPLIMIENTO">CUMPLIMIENTO</option>
+              <option value="JURÍDICA">JURÍDICA</option>
+              <option value="DIRECCIÓN CONTABLE">DIRECCIÓN CONTABLE</option>
+              <option value="RECURSOS HUMANOS">RECURSOS HUMANOS</option>
+              <option value="RESPONSABILIDAD SOCIAL">RESPONSABILIDAD SOCIAL</option>
+              <option value="SG-SST">SG-SST</option>
+              <option value="AMBIENTAL">AMBIENTAL</option>
+              <option value="MINAS">MINAS</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="leaderEmail">Correo Electrónico *</label>
+            <input type="email" id="leaderEmail" required placeholder="ejemplo@empresa.com">
+          </div>
+
+          <div class="form-group">
+            <label for="notes">Notas u Observaciones (Opcional)</label>
+            <textarea id="notes" placeholder="Detalles o requerimientos específicos para la sesión..."></textarea>
+          </div>
+
+          <!-- Campos ocultos para fecha y hora seleccionadas -->
+          <input type="hidden" id="selectedDate">
+          <input type="hidden" id="selectedTime">
+
+          <button type="submit" class="btn-primary" id="btnSubmit" disabled>Confirmar Agendamiento</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
