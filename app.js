@@ -160,7 +160,7 @@ if (document.getElementById('weeklyGrid')) {
 // ==========================================
 // VISTA PANEL ADMIN (ADMIN.HTML)
 // ==========================================
-const ADMIN_PASSWORD = "admin123sgd"; // Puedes cambiar esta contraseña por la que prefieras
+const ADMIN_PASSWORD = "Maxi2703"; // Puedes cambiar esta contraseña por la que prefieras
 
 function loginAdmin() {
   const pass = document.getElementById('adminPassword').value;
