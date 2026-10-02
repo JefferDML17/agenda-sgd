@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Administración - Citas SGD</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Panel de Control / Administración</h1>
+      <p>Gestión y seguimiento de los acompañamientos programados</p>
+    </header>
+
+    <!-- Pantalla de Login con Clave -->
+    <div class="card" id="loginCard" style="max-width: 400px; margin: 0 auto;">
+      <h2>Acceso Privado</h2>
+      <div class="form-group">
+        <label for="adminPassword">Ingresa la contraseña de administración:</label>
+        <input type="password" id="adminPassword" placeholder="Contraseña">
+      </div>
+      <button class="btn-primary" onclick="loginAdmin()">Ingresar</button>
+    </div>
+
+    <!-- Panel de Gestión (Oculto inicialmente) -->
+    <div id="adminPanel" style="display: none;">
+      <div class="card">
+        <h2>Listado de Acompañamientos Registrados</h2>
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Horario</th>
+              <th>Área</th>
+              <th>Líder</th>
+              <th>Correo</th>
+              <th>Notas</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="adminTableBody">
+            <!-- Se cargan dinámicamente -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
